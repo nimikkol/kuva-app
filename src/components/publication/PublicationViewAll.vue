@@ -1,5 +1,5 @@
 <script setup>
-const message ="Testi viesti"
+const message ="Testi päivitys"
 </script>
 
 <template>
