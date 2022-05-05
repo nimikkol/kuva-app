@@ -2,6 +2,7 @@
 import { onClickOutside } from '@vueuse/core';
 import { inject, reactive, ref } from 'vue'
 import {authService} from '../../services/authService'
+import { RouterLink } from 'vue-router';
 
 const showLoginView = inject('showLogin')
 
@@ -35,7 +36,7 @@ const showLoginView = inject('showLogin')
 
         <label>Salasana</label>
         <input v-model="credentials.password" type="password">
-
+        <router-link to="/register" @click="showLoginView = false">Rekisteröidy</router-link>
         <button type="submit">Kirjaudu</button>
 
     </form>

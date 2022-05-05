@@ -20,7 +20,7 @@ import LoginView from '../login/LoginView.vue';
 <template>
 <div class="nav">
     <router-link to="/">Koti</router-link>
-<router-link to="/users">Käyttäjät</router-link>
+<router-link v-if="isAuth" to="/users">Käyttäjät</router-link>
 <router-link to="/create">Uusi postaus</router-link>
 <a href="#" v-if="isAuth" @click.prevent="logout">Ulos</a>
 <a href="#" v-else @click.prevent="showLoginView= !showLoginView">Kirjaudu</a>
