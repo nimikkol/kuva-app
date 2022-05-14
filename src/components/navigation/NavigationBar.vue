@@ -1,6 +1,7 @@
 <script setup>
 import { provide, ref } from 'vue';
 import {RouterLink} from 'vue-router'
+import { setError } from '../../composables/notification';
 import { authService } from '../../services/authService';
 import { isAuth } from '../../store';
 import LoginView from '../login/LoginView.vue';
@@ -14,7 +15,6 @@ import LoginView from '../login/LoginView.vue';
         await authService.useLogout()
     }
 
-
 </script>
 
 <template>
@@ -24,6 +24,9 @@ import LoginView from '../login/LoginView.vue';
 <router-link to="/create">Uusi postaus</router-link>
 <a href="#" v-if="isAuth" @click.prevent="logout">Ulos</a>
 <a href="#" v-else @click.prevent="showLoginView= !showLoginView">Kirjaudu</a>
+
+<button @click="setError('Testi virhe')">Testaa ilmoitus</button>
+
 </div>
 
 <login-view v-if="showLoginView && !isAuth"></login-view>
