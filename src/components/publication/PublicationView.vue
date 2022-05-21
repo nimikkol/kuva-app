@@ -22,4 +22,12 @@ defineProps({
  img{
     width: 400px;
 }
+
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aliceblue;
+    padding: 10px;
+}
 </style>

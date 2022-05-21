@@ -35,7 +35,11 @@ export const router = createRouter({
             name:'/Rekisteröityminen',
             component: RegistrationView
         }
-    ]
+    ],
+
+    scrollBehavior() {
+        document.getElementById('app').scrollIntoView()
+    }
 })
 
 router.beforeEach((to, from, next)=>{
@@ -46,3 +50,4 @@ router.beforeEach((to, from, next)=>{
         next()
     }
 })
+
